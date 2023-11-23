@@ -18,3 +18,4 @@ define(['N/ui/serverWidget'],
       beforeLoad: beforeLoad
     };
   });
+// Deployed as AddButton.js or UE_AddButton
