@@ -24,5 +24,17 @@
   : This line retrieves the value of the "quantity" field from the "item" sublist of the current record.
 - A condition is used to check if the qnty > 3 or not, if true than show an alert to the user.
 
+## qty_isEqualsTo4.js
+- API methods `N/currentRecord` & `N/ui/message`
+- `validateDelete` to validate the condition if not true than delete
+- `var qty = rec_obj.getCurrentSublistValue({
+  sublistId: "item", fieldId: "quantity"
+  });`
+  : This line retrieves the value of the "quantity" field from the "item" sublist of the current record.
+- qnty == 4 , cant delete an item
+
+## ClientScriptCheckingAlerts.js
+- Simple alerts in all the entry points to check the trigger points in a client script
+
 
   
