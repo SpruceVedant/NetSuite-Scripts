@@ -18,5 +18,4 @@ define(['N/error'], function(error) {
         pageInit: pageInit,
     };
 }); 
-
-        
+// Script to set customer in entity field
