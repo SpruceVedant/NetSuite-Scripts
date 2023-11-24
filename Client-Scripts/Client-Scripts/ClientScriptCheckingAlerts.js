@@ -20,7 +20,6 @@ function(currentRecord) {
     function postSourcing(scriptContext) {
         alert('Field slaved.');
     }
-
     function sublistChanged(scriptContext) {
         alert('Sublist changed.');
     }
@@ -68,3 +67,4 @@ function(currentRecord) {
     };
 
 });
+// Script to check the trigger points of methods upon loading of a record
