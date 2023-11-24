@@ -12,4 +12,8 @@
 - Uses `N/ui/serverWidget` API and form module
 - `addButton` module of API is used
 
+## PreventSubmit
+- `beforeSubmit`entry point is used as we need to only validate if the user has an empty field or not
+- ` var email = newRecord.getValue({ fieldId: 'email' });` is used to get the value of fieldid
+
 
