@@ -4,8 +4,8 @@
  */
 define(['N/error'], function(error) {
     function pageInit(context) {
-        if (context.mode == 'create')
-            return;
+        // if (context.mode == 'create')
+        //     return;
         var currentRecord = context.currentRecord;
         currentRecord.setValue({
             fieldId: 'entity',
