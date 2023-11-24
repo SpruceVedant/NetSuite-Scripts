@@ -20,3 +20,4 @@ define([],
             beforeSubmit: beforeSubmit
         };
     });
+// This script prevents user to submit the form if the email field is empty.
