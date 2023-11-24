@@ -80,3 +80,4 @@ define(['N/currentRecord', 'N/ui/message'],
       validateLine : validateLine,
     };
   });
+// Do let the line be added if the quantity for the item is less than 3. 
