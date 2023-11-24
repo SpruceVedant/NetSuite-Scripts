@@ -29,3 +29,4 @@ define(['N/currentRecord'], function(error) {
         fieldChanged: fieldChanged
     };
 });
+// Script to display selected customers name in the memo field
