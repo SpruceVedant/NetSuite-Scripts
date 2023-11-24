@@ -13,5 +13,16 @@
 - `currentRecord.setText` is used to fetch the text that is on entity field.
 - `currentRecord.setValue` is used to set the value to the memo field with id `memo`.
 
+## qty_lessThan3.js
+- Used `N/currentRecord` & `N/ui/message` API methods
+- `fieldChanged` entry point is used
+- `validateLine` is also used
+- There is a `recObj` in which `currentRecord.get` is used to retrieve the current record.
+- `var qty = rec_obj.getCurrentSublistValue({
+  sublistId: "item", fieldId: "quantity"
+  });`
+  : This line retrieves the value of the "quantity" field from the "item" sublist of the current record.
+- A condition is used to check if the qnty > 3 or not, if true than show an alert to the user.
+
 
   
