@@ -55,3 +55,4 @@ function(record, log, message, error) {
     };
 
 });
+//alert user
