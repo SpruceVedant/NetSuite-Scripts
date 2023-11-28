@@ -62,3 +62,4 @@ function(record, log, message, error) {
         beforeSubmit: beforeSubmit
     };
 })
+// throw error if the condition is not followed by the user
