@@ -8,7 +8,7 @@ define(['N/record', 'N/log', 'N/currentRecord'],
         function pageInit(context) {
            
         }
-        function fieldChanged(context) {
+        function lineInit(context) {
             
             if (context.sublistId === 'item') {
     
@@ -37,7 +37,7 @@ define(['N/record', 'N/log', 'N/currentRecord'],
 
         return {
             pageInit: pageInit,
-            fieldChanged: fieldChanged
+            lineInit: lineInit
         };
     }
 );
