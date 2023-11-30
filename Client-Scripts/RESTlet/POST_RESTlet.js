@@ -80,4 +80,4 @@ define(['N/record', 'N/log'], function (record, log) {
         }
     };
 });
-// RESTlet to post Data in this case create a Contcat record in NetSuite
+// RESTlet to post Data in this case create a Contact record in NetSuite
