@@ -4,22 +4,14 @@
 */
 define(['N/currentRecord', 'N/record', 'N/runtime'],
     (currentRecord, record, runtime) => {
-
-
         const getInputData = (inputContext) => {
-            var salesorder_id_array = runtime.getCurrentScript().getParameter({
+            var so_Arr = runtime.getCurrentScript().getParameter({
                 name: 'custscript3'
             });
-            log.debug('Sales Order : ', salesorder_id_array);
-            var arr = salesorder_id_array.split(',');
-            // log.debug('Sales Order : ', typeof arr);
-
+            log.debug('Sales Order : ', so_Arr);
+            var arr = so_Arr.split(',');
             return arr;
-
         }
-
-
-
         const map = (mapContext) => {
             var map_key = JSON.parse(mapContext.key);
             var map_value = JSON.parse(mapContext.value);
