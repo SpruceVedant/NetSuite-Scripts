@@ -23,12 +23,7 @@ define(['N/currentRecord', 'N/record', 'N/runtime'],
                     'custpage_so_id': map_value,
                 }
             })
-
-
-
         }
-
-
         const reduce = (reduceContext) => {
             var reduce_key = reduceContext.key;
             var reduce_value = reduceContext.values;
@@ -55,15 +50,10 @@ define(['N/currentRecord', 'N/record', 'N/runtime'],
                 log.debug('Memo has been saved ', 'Memo has been saved ' + so_id);
 
             }
-
         }
-
-
-
         const summarize = (summaryContext) => {
 
         }
 
         return { getInputData, map, reduce, summarize }
-
     });
