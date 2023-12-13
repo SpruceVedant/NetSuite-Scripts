@@ -58,7 +58,7 @@ function(currentRecord, email, runtime, record, url, search) {
 
     }
 
-	function approvePO(scriptContext) {
+	function approve_purchae_order(scriptContext) {
 		 var objRec = currentRecord.get();
 		 var idRec = objRec.id;		
 		 var user = runtime.getCurrentUser().id;
@@ -76,7 +76,7 @@ function(currentRecord, email, runtime, record, url, search) {
 
     }
 
-	function rejectPO(scriptContext) {
+	function reject_purchase_order(scriptContext) {
 		 var objRec = currentRecord.get();
 		 var idRec = objRec.id;
 		 log.debug('id:',objRec);
@@ -109,7 +109,7 @@ function(currentRecord, email, runtime, record, url, search) {
     return {
         pageInit: pageInit,
         sendForApproval: sendForApproval,
-		approvePO: approvePO,
-		rejectPO: rejectPO
+		approve_purchae_order: approve_purchae_order,
+		reject_purchase_order: reject_purchase_order
 		};
 });
