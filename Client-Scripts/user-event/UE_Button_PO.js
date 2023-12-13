@@ -32,13 +32,13 @@ define(["N/record", "N/ui/serverWidget", "N/runtime"], /**
       var approvePOValue = form.addButton({
         id: "custpage_approve_button",
         label: "Approve PO",
-        functionName: "approvePO()",
+        functionName: "approve_purchae_order()",
       });
  
       var rejectPOValue = form.addButton({
         id: "custpage_reject_button",
         label: "Reject PO",
-        functionName: "rejectPO()",
+        functionName: "reject_purchase_order()",
       });
     }
   };
