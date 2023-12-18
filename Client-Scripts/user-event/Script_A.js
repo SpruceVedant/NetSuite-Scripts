@@ -19,3 +19,4 @@
 	   }
    }
  );
+ // Isolated scripts to check trigger points
