@@ -17,3 +17,4 @@ define([], function() {
         beforeSubmit: beforeSubmit
     };
 });
+// Isolated scripts to check trigger points

@@ -14,3 +14,4 @@ define([], function() {
         afterSubmit: afterSubmit,
     };
 });
+// Isolated scripts to check trigger points
