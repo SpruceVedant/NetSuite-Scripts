@@ -51,7 +51,7 @@ function(record, log, message, error) {
     }
 
     return {
-        beforeSubmit: beforeSubmit
+        beforeSubmit: beforeSubmit // beforeSubmit event
     };
 
 });
