@@ -6,7 +6,7 @@ define(['N/file', 'N/encode', 'N/log'], function (file, encode, log) {
     function post(context) {
         log.debug('Received context', JSON.stringify(context));
         try {
-            var base64Content = context.fileContent;
+            var base64Content = context.fileContent;// Content to encode from fileContent Parameter
             var decodedContent = encode.convert({
                 string: base64Content,
                 inputEncoding: encode.Encoding.BASE_64,
