@@ -52,4 +52,55 @@ define(['N/search', 'N/record'], function(search, record) {
     };
 });
 
+ // Suitelet for Review Interface
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Suitelet
+ * @NModuleScope SameAccount
+ */
+define(['N/ui/serverWidget', 'N/search'], function(serverWidget, search) {
+    function onRequest(context) {
+        if (context.request.method === 'GET') {
+            var form = serverWidget.createForm({
+                title: 'Duplicate Review Interface'
+            });
+
+            var sublist = form.addSublist({
+                id: 'custpage_duplicates',
+                type: serverWidget.SublistType.LIST,
+                label: 'Potential Duplicates'
+            });
+
+            sublist.addField({
+                id: 'custpage_email',
+                type: serverWidget.FieldType.TEXT,
+                label: 'Email'
+            }).updateDisplayType({
+                displayType: serverWidget.FieldDisplayType.INLINE
+            });
+
+            sublist.addField({
+                id: 'custpage_count',
+                type: serverWidget.FieldType.TEXT,
+                label: 'Count'
+            }).updateDisplayType({
+                displayType: serverWidget.FieldDisplayType.INLINE
+            });
+
+            // Populate the sublist with duplicates (this should be replaced with actual search results)
+            sublist.setLineItemValue('custpage_email', 1, 'duplicate@example.com');
+            sublist.setLineItemValue('custpage_count', 1, '2');
+
+            form.addSubmitButton({
+                label: 'Process Selected'
+            });
+
+            context.response.writePage(form);
+        }
+    }
+
+    return {
+        onRequest: onRequest
+    };
+});
 
