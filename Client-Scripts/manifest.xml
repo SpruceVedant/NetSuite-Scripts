@@ -1,0 +1,10 @@
+<manifest projecttype="SUITEAPP">
+    <publisherid>com.connector</publisherid>
+    <projectid>1</projectid>
+    <projectname>Connector</projectname>
+    <projectversion>1.0.0</projectversion>
+    <frameworkversion>1.0</frameworkversion>
+
+    <!-- For SuiteApp -->
+
+</manifest>
