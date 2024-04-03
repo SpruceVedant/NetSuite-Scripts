@@ -6,7 +6,7 @@ define(['N/search', 'N/file', 'N/encode', 'N/http', 'N/xml'], function(search, f
     
     function onRequest(context) {
         if (context.request.method === 'GET') {
-            var searchId = context.request.parameters.searchid; // Get Saved Search ID from request parameter
+            var searchId = context.request.parameters.searchid; 
             
             // Check if searchId is provided
             if (!searchId) {
