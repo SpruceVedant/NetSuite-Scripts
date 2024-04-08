@@ -16,7 +16,7 @@ define(['N/record', 'N/https', 'N/log'], function(record, https, log) {
             "FirstName": firstName,
             "LastName": lastName,
             "Email": email,
-            // Add other lead fields as needed
+            
         });
 
         var headers = {
