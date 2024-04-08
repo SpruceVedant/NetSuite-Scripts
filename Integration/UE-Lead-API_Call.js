@@ -21,7 +21,7 @@ define(['N/record', 'N/https', 'N/log'], function(record, https, log) {
 
         var headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer <Your_Access_Token>' // Replace with your actual access token
+            'Authorization': 'Bearer <Your_Access_Token>' 
         };
 
         // Update this URL to the Salesforce API endpoint for creating leads
