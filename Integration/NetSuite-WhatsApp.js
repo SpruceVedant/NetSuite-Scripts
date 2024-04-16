@@ -42,3 +42,4 @@ define(['N/record', 'N/http'], function(record, http) {
         afterSubmit: afterSubmit
     };
 });
+// it will be connected through a python Rest API which will connect through whatsapp
