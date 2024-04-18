@@ -4,7 +4,7 @@
  */
 define(['N/record', 'N/https', 'N/log', 'N/search'], function(record, https, log, search) {
 
-    // Function to synchronize customer to Salesforce as an account
+    
     function syncCustomerToSalesforceAsAccount(customerId) {
         var customerRecord = record.load({
             type: record.Type.CUSTOMER,
