@@ -47,9 +47,9 @@ define(['N/record', 'N/https', 'N/log', 'N/search'], function(record, https, log
             'Authorization': 'Bearer 00D5g00000LNAsc!AR0AQOEapLTToKRCq6ZY3TtnkXe00Imyjqu4twKq6bssaerGJLY3Dc1JykfydpLU9ClbhURi4fBWk_YWZeFQYgTKVzO_JPCW'
         };
 
-        // Query to find existing PriceBookEntry
+       
         var queryUrl = 'https://blueflamelabs-7d-dev-ed.develop.my.salesforce.com/services/data/v60.0/query/?q=' +
-            encodeURIComponent('SELECT Id FROM PricebookEntry WHERE Product2Id = \'' + sfProductId + '\' AND Pricebook2Id = \'01s5g00000c5VfkAAE\'');
+            encodeURIComponent('SELECT Id FROM PricebookEntry WHERE Product2Id = \'' + sfProductId + '\' AND Pricebook2Id = \'01s5g00000c5VfkAAE\''); // Query to find existing PriceBookEntry
 
         var searchResponse = https.get({
             url: queryUrl,
@@ -82,7 +82,7 @@ define(['N/record', 'N/https', 'N/log', 'N/search'], function(record, https, log
         }
     }
 
-    // Function to sync items from NetSuite to Salesforce as products
+    
     function syncItemsToSalesforceAsProducts(salesOrderRecord) {
         var itemMappings = {};
         var itemCount = salesOrderRecord.getLineCount({ sublistId: 'item' });
