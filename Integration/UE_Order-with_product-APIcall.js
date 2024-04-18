@@ -139,7 +139,7 @@ define(['N/record', 'N/https', 'N/log', 'N/search'], function(record, https, log
         return itemMappings;
     }
 
-    // Function to create Salesforce order with associated items
+    
     function createSalesforceOrder(salesOrderRecord, sfAccountId, itemMappings) {
         var orderData = {
             "AccountId": sfAccountId,
@@ -189,7 +189,7 @@ define(['N/record', 'N/https', 'N/log', 'N/search'], function(record, https, log
         }
     }
 
-    // Main function triggered after record submission
+   
     function afterSubmit(context) {
         if (context.type !== context.UserEventType.CREATE) return;
 
