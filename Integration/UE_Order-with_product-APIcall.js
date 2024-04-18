@@ -40,7 +40,7 @@ define(['N/record', 'N/https', 'N/log', 'N/search'], function(record, https, log
         }
     }
 
-    // Function to ensure PriceBookEntry in Salesforce
+   
     function ensurePriceBookEntry(sfProductId, unitPrice) {
         var headers = {
             'Content-Type': 'application/json',
