@@ -170,7 +170,7 @@ define(['N/record', 'N/https', 'N/log', 'N/search'], function(record, https, log
                         "OrderId": sfOrderId,
                         "PricebookEntryId": mapping.priceBookEntryId,
                         "Quantity": mapping.quantity,
-                        "UnitPrice": mapping.unitPrice // Set the unit price correctly
+                        "UnitPrice": mapping.unitPrice 
                     };
 
                     var itemResponse = https.post({
