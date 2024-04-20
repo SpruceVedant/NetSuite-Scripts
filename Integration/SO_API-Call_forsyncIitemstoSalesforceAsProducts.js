@@ -29,7 +29,7 @@ function syncItemsToSalesforceAsProducts(salesOrderRecord) {
 
         var headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 00D5g00000LNAsc!AR0AQOEapLTToKRCq6ZY3TtnkXe00Imyjqu4twKq6bssaerGJLY3Dc1JykfydpLU9ClbhURi4fBWk_YWZeFQYgTKVzO_JPCW'
+            'Authorization': 'Bearer Token'
         };
 
         var response = https.post({
