@@ -1,3 +1,4 @@
+//function to use to sync products in Salesforce from NetSuite in order to map correct unit price in Salesforce.
 function syncItemsToSalesforceAsProducts(salesOrderRecord) {
     var itemMappings = {};
     var itemCount = salesOrderRecord.getLineCount({ sublistId: 'item' });
