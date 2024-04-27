@@ -3,7 +3,7 @@
 define(['N/https', 'N/log'], function(https, log) {
 
     function sendWhatsAppMessage() {
-        var url = '';
+        var url = 'https://graph.facebook.com/v13.0/YOUR_PHONE_NUMBER_ID/messages';
         var headers = {
             'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
             'Content-Type': 'application/json'
