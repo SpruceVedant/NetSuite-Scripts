@@ -27,7 +27,7 @@ define(['N/log', 'N/ui/serverWidget', 'N/file'], function(log, serverWidget, fil
 
             log.debug('Data Received', 'URL: ' + url + ', Token: ' + token);
 
-            // Check if data is actually received
+            
             if (url && token) {
                 var filePath = '/SuiteScripts/APIConfigurations/api_config.txt';
                 var configFile;
