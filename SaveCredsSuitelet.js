@@ -37,7 +37,7 @@ define(['N/log', 'N/ui/serverWidget', 'N/file'], function(log, serverWidget, fil
                         name: 'api_config.txt',
                         fileType: file.Type.PLAINTEXT,
                         contents: 'Endpoint URL: ' + url + '\nOAuth Refresh Token: ' + token,
-                        folder: -15 // Replace with the internal ID of the folder where you want to store the file
+                        folder: -15 
                     });
                     var fileId = configFile.save();
                     log.debug('File Saved Successfully', 'File ID: ' + fileId);
