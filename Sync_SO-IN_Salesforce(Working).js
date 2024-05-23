@@ -3,7 +3,7 @@
  * @NScriptType UserEventScript
  */
 define(['N/record', 'N/https', 'N/log', 'N/search'], function(record, https, log, search) {
-
+// Parse Salesforce API endpoint and refresh token with API-Config.json file in SuiteScrips folder.
     
     function syncCustomerToSalesforceAsAccount(customerId) {
         var customerRecord = record.load({
