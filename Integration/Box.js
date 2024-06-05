@@ -2,18 +2,18 @@
  * @NApiVersion 2.x
  * @NScriptType Suitelet
  */
-define(['N/https', 'N/file', 'N/log'], function(https, file, log) {
+define(['N/https', 'N/file', 'N/log',  "N/ui/serverWidget"], function(https, file, log, serverWidget) {
     function onRequest(context) {
         if (context.request.method === 'GET') {
+  
             try {
-                var fileId = 12345; // Replace with your actual file ID
+                var fileId = ; 
 
-                var developerToken = 'YOUR_DEVELOPER_TOKEN'; // Replace with your Box developer token
-
+                var developerToken = '';
                 var fileObj = file.load({
                     id: fileId
                 });
-
+                
                 var fileContent = fileObj.getContents();
                 var boundary = '----WebKitFormBoundary7MA4YWxkTrZu0gW';
                 var headers = {
@@ -23,7 +23,7 @@ define(['N/https', 'N/file', 'N/log'], function(https, file, log) {
 
                 var attributes = JSON.stringify({
                     name: fileObj.name,
-                    parent: { id: '0' } // Replace '0' with the desired parent folder ID in Box
+                    parent: { id: '0' } 
                 });
 
                 var body = '--' + boundary + '\r\n';
