@@ -62,7 +62,6 @@ define(['N/https', 'N/file', 'N/log',  "N/ui/serverWidget"], function(https, fil
             }
         }
     }
-
     return {
         onRequest: onRequest
     };
