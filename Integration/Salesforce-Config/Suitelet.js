@@ -56,7 +56,7 @@ define(['N/ui/serverWidget', 'N/record', 'N/file', 'N/search', 'N/log'], functio
                 recordTypeField.defaultValue = context.request.parameters.custpage_record_type;
             }
 
-            // Add submit button
+           
             form.addSubmitButton({
                 label: 'Save Configuration'
             });
@@ -99,7 +99,7 @@ define(['N/ui/serverWidget', 'N/record', 'N/file', 'N/search', 'N/log'], functio
             // Convert the configuration object to JSON
             var configJSON = JSON.stringify(config);
 
-            // Save the JSON to a file
+           
             var configFile = file.create({
                 name: 'salesforce_user_settings.json',
                 fileType: file.Type.JSON,
