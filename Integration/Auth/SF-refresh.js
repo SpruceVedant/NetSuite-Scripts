@@ -41,7 +41,6 @@ define(['N/https', 'N/file'], function(https, file) {
 
             updatedCredentialsFile.save();
         } else {
-            // Handle error
             log.error('Error refreshing access token', response.body);
         }
     }
