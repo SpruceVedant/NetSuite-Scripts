@@ -31,7 +31,7 @@ define(['N/https', 'N/file'], function(https, file) {
             var responseBody = JSON.parse(response.body);
             credentials.access_token = responseBody.access_token;
 
-            // Update the stored credentials with the new access token
+            // Update the stored credentials withthe new access token
             var updatedCredentialsFile = file.create({
                 name: 'credentials.json',
                 fileType: file.Type.JSON,
