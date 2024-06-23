@@ -8,7 +8,6 @@ define(['N/https', 'N/file', 'N/log',  "N/ui/serverWidget"], function(https, fil
   
             try {
                 var fileId = ; 
-
                 var developerToken = '';
                 var fileObj = file.load({
                     id: fileId
