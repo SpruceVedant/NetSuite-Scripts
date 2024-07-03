@@ -1,0 +1,8 @@
+{
+    "baseUrl": "./",
+    "paths": {
+      "xlsx": "/SuiteScripts/NetSuite Saved Search Export Excel XLSX/sheetjs/xlsx",
+      "jszip": "/SuiteScripts/NetSuite Saved Search Export Excel XLSX/sheetjs/jszip"
+    }
+  }
+  
