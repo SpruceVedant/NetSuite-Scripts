@@ -135,7 +135,7 @@ define(['N/query', 'N/ui/serverWidget', 'N/log', 'N/file'], function(query, serv
 					}
 					
 				} else {
-					// Show error
+					
 					var error_message;
 					if (result.error == undefined) {
 						error_message = '<div style="font-size:20pt; margin-top:50px;">0 results found</div>';
