@@ -1,8 +1,4 @@
 /**
- * SuiteQL Query Executor
- * Runs arbitrary SuiteQL queries in an interactable Suitelet
- *
- * @author Steve Rolfechild
  * @NScriptType Suitelet
  * @NApiVersion 2.x
  */
