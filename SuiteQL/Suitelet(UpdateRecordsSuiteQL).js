@@ -1,3 +1,7 @@
+/**
+ * @NApiVersion 2.x
+ * @NScriptType Suitelet
+ */
 define(['N/ui/serverWidget', 'N/query', 'N/record', 'N/log'], function(serverWidget, query, record, log) {
     function onRequest(context) {
         if (context.request.method === 'GET') {
