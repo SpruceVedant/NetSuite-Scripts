@@ -44,7 +44,7 @@ define(['N/ui/serverWidget', 'N/query', 'N/record', 'N/log'], function(serverWid
         });
 
         try {
-            var parsedStatement = parseUpdateStatement(updateStatement);
+            var parsedStatement = parseUpdateStatement(updateStatement);//parsing update function
 
             if (parsedStatement) {
                 var sql = 'SELECT id FROM ' + sanitize(parsedStatement.table) + ' WHERE ' + parsedStatement.where;
