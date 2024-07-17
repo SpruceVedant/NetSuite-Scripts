@@ -4,7 +4,7 @@
  */
 define(['N/query', 'N/ui/serverWidget', 'N/log', 'N/file'], function(query, serverWidget, log, file) {
 	
-	var file_folder = -15;
+	var file_folder = -15;// Folder ID
 	
 	
 	function runQuery(sql, limitRows) {
