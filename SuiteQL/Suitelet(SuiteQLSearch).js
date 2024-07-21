@@ -4,7 +4,7 @@
  */
 define(['N/query', 'N/ui/serverWidget', 'N/log', 'N/file'], function(query, serverWidget, log, file) {
 	
-	var file_folder = -15;// Folder ID
+	var file_folder = -15;// Folder ID where the csv import will take place
 	
 	
 	function runQuery(sql, limitRows) {
