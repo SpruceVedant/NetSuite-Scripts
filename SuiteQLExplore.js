@@ -1,3 +1,5 @@
+//Suitelet which displays SuiteQL query results in a table using Suitelet functions        
+
 /**
  * @NApiVersion 2.x
  * @NScriptType Suitelet
