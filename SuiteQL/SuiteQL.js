@@ -49,7 +49,7 @@ define(['N/query', 'N/log', 'N/ui/serverWidget'], function(query, log, serverWid
                 label: 'Total'
             });
 
-            // Populate the sublist with data
+           
             for (var i = 0; i < records.length; i++) {
                 sublist.setSublistValue({
                     id: 'custpage_id',
