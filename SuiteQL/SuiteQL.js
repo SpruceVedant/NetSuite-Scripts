@@ -73,7 +73,7 @@ define(['N/query', 'N/log', 'N/ui/serverWidget'], function(query, log, serverWid
                 });
             }
 
-            // Display the form
+           
             context.response.writePage(form);
         }
     }
