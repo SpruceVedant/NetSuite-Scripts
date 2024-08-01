@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-// Use your access token directly
+
 const ACCESS_TOKEN = "";
 const BASE_URL = "";
 
