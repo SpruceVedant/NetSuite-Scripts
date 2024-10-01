@@ -57,6 +57,111 @@ define(['N/record', 'N/log'], function(record, log) {
             });
         }
     }
+
+    /**
+ * Update an existing Sales Order (PUT)
+ */
+function updateSalesOrder(data) {
+    log.debug('Update Sales Order Data (PUT)', JSON.stringify(data));
+    try {
+        if (!data.salesOrderId || isNaN(parseInt(data.salesOrderId))) {
+            log.error('Invalid Sales Order ID (PUT)', 'Sales Order ID is missing or invalid: ' + data.salesOrderId);
+            throw error.create({
+                name: 'INVALID_SALES_ORDER_ID',
+                message: 'Invalid Sales Order ID provided: ' + data.salesOrderId
+            });
+        }
+
+        // Load the existing sales order
+        log.debug('Loading Sales Order (PUT)', 'Sales Order ID: ' + data.salesOrderId);
+        var salesOrder = record.load({
+            type: record.Type.SALES_ORDER,
+            id: data.salesOrderId,
+            isDynamic: true
+        });
+
+        // Update location and currency if provided
+        if (data.location) {
+            log.debug('Updating Location (PUT)', 'New Location: ' + data.location);
+            salesOrder.setValue({ fieldId: 'location', value: data.location });
+        }
+
+        if (data.currency) {
+            log.debug('Updating Currency (PUT)', 'New Currency: ' + data.currency);
+            salesOrder.setValue({ fieldId: 'currency', value: data.currency });
+        }
+
+        // Get existing items on the sales order
+        var existingItemCount = salesOrder.getLineCount({ sublistId: 'item' });
+        log.debug('Existing Items Count (PUT)', 'Count: ' + existingItemCount);
+
+        var itemsToUpdate = data.items || [];
+
+        // Loop through the items provided in the request
+        itemsToUpdate.forEach(function(itemToUpdate, index) {
+            var found = false;
+
+            // Loop through the existing items on the sales order
+            for (var i = 0; i < existingItemCount; i++) {
+                var existingItemId = salesOrder.getSublistValue({
+                    sublistId: 'item',
+                    fieldId: 'item',
+                    line: i
+                });
+
+                // If the item already exists in the sales order, update it
+                if (parseInt(existingItemId) === parseInt(itemToUpdate.itemId)) {
+                    log.debug('Updating Existing Item (PUT)', 'Item ID: ' + itemToUpdate.itemId);
+                    salesOrder.selectLine({ sublistId: 'item', line: i });
+                    salesOrder.setCurrentSublistValue({
+                        sublistId: 'item',
+                        fieldId: 'quantity',
+                        value: itemToUpdate.quantity
+                    });
+                    salesOrder.setCurrentSublistValue({
+                        sublistId: 'item',
+                        fieldId: 'rate',
+                        value: itemToUpdate.rate
+                    });
+                    salesOrder.commitLine({ sublistId: 'item' });
+                    found = true;
+                    break;
+                }
+            }
+
+            // If the item is not found, add it as a new line
+            if (!found) {
+                log.debug('Adding New Item (PUT)', 'Item ID: ' + itemToUpdate.itemId);
+                salesOrder.selectNewLine({ sublistId: 'item' });
+                salesOrder.setCurrentSublistValue({
+                    sublistId: 'item',
+                    fieldId: 'item',
+                    value: itemToUpdate.itemId
+                });
+                salesOrder.setCurrentSublistValue({
+                    sublistId: 'item',
+                    fieldId: 'quantity',
+                    value: itemToUpdate.quantity
+                });
+                salesOrder.setCurrentSublistValue({
+                    sublistId: 'item',
+                    fieldId: 'rate',
+                    value: itemToUpdate.rate
+                });
+                salesOrder.commitLine({ sublistId: 'item' });
+            }
+        });
+
+        var updatedSalesOrderId = salesOrder.save();
+        log.debug('Sales Order Updated (PUT)', 'Updated Sales Order ID: ' + updatedSalesOrderId);
+        return { status: 'success', salesOrderId: updatedSalesOrderId };
+
+    } catch (e) {
+        log.error('Error Updating Sales Order (PUT)', e.message);
+        return error.create({ name: 'SALES_ORDER_UPDATE_ERROR', message: e.message });
+    }
+}
+
     /**
  * Delete an entire Sales Order or a specific item from the Sales Order (DELETE)
  */
