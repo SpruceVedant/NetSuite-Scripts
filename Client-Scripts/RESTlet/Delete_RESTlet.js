@@ -1,3 +1,4 @@
+// RESTlet to mimic 'DELETE' method to delete certain record in netsuite.
 /**
  * @NApiVersion 2.x
  * @NScriptType Restlet
@@ -57,4 +58,3 @@ define(['N/record', 'N/log'], function (record, log) {
         }
     };
 });
-// RESTlet to mimic 'DELETE' method to delete certain record in netsuite.
