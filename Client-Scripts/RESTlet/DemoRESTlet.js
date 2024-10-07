@@ -31,7 +31,6 @@ const req = https.request(url, options, (res) => {
         }
     });
 });
-
 // Handling request error
 req.on('error', (error) => {
     console.error(`Request error: ${error.message}`);
