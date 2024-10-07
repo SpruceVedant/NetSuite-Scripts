@@ -5,7 +5,7 @@ const url = 'https://td2953323.restlets.api.netsuite.com/app/site/hosting/restle
 
 // Request options, including headers
 const options = {
-    method: 'GET',  // Assuming it's a GET request as per your cURL example
+    method: 'GET',  // Assuming it's a GET request as per cURL example
     headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Your_Authorization_Token_Here',  // Replace with the actual token
