@@ -1,18 +1,18 @@
 const https = require('https');
 
-// NetSuite RESTlet URL
-const url = 'https://td2953323.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=812&deploy=1&salesOrderId=8509';
+
+const url = 'https://.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=812&deploy=1&salesOrderId=8509';
 
 // Request options, including headers
 const options = {
-    method: 'GET',  // Assuming it's a GET request as per cURL example
+    method: 'GET',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Your_Authorization_Token_Here',  // Replace with the actual token
+        'Authorization': '',  
     },
 };
 
-// Sending the request
+
 const req = https.request(url, options, (res) => {
     let data = '';
 
@@ -21,7 +21,7 @@ const req = https.request(url, options, (res) => {
         data += chunk;
     });
 
-    // End of response
+ 
     res.on('end', () => {
         if (res.statusCode === 200) {
             console.log('Response:', JSON.parse(data));
@@ -31,10 +31,5 @@ const req = https.request(url, options, (res) => {
         }
     });
 });
-// Handling request error
-req.on('error', (error) => {
-    console.error(`Request error: ${error.message}`);
-});
 
-// End the request
 req.end();
