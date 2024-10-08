@@ -23,7 +23,6 @@ define(['N/record', 'N/search'], function(record, search) {
     }
 
     function doPost(requestBody) {
-        // Create a new sales order
         try {
             var salesOrderRecord = record.create({
                 type: record.Type.SALES_ORDER,
