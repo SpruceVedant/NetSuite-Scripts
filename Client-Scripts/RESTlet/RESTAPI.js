@@ -5,7 +5,7 @@
 define(['N/record', 'N/search'], function(record, search) {
 
     function doGet(requestParams) {
-        // Fetch a sales order by internal ID
+
         try {
             var salesOrderId = requestParams.salesOrderId;
             var salesOrderRecord = record.load({
@@ -30,13 +30,13 @@ define(['N/record', 'N/search'], function(record, search) {
                 isDynamic: true
             });
 
-            // Set values (example: customer, item)
+           
             salesOrderRecord.setValue({
                 fieldId: 'entity',
                 value: requestBody.customerId
             });
 
-            // Add items to the sales order
+      
             salesOrderRecord.selectNewLine({ sublistId: 'item' });
             salesOrderRecord.setCurrentSublistValue({
                 sublistId: 'item',
@@ -61,33 +61,31 @@ define(['N/record', 'N/search'], function(record, search) {
         }
     }
 
-    function doPut(requestBody) {
-        // Update a sales order
-        try {
-            var salesOrderId = requestBody.salesOrderId;
-            var salesOrderRecord = record.load({
-                type: record.Type.SALES_ORDER,
-                id: salesOrderId
-            });
+    // function doPut(requestBody) {
+    //     try {
+    //         var salesOrderId = requestBody.salesOrderId;
+    //         var salesOrderRecord = record.load({
+    //             type: record.Type.SALES_ORDER,
+    //             id: salesOrderId
+    //         });
 
-            salesOrderRecord.setValue({
-                fieldId: 'memo',
-                value: requestBody.memo
-            });
+    //         salesOrderRecord.setValue({
+    //             fieldId: 'memo',
+    //             value: requestBody.memo
+    //         });
 
-            salesOrderRecord.save();
+    //         salesOrderRecord.save();
 
-            return {
-                status: 'success',
-                message: 'Sales order updated successfully'
-            };
-        } catch (e) {
-            return { status: 'error', message: e.message };
-        }
-    }
+    //         return {
+    //             status: 'success',
+    //             message: 'Sales order updated successfully'
+    //         };
+    //     } catch (e) {
+    //         return { status: 'error', message: e.message };
+    //     }
+    // }
 
     function doDelete(requestParams) {
-        // Delete a sales order by internal ID
         try {
             var salesOrderId = requestParams.salesOrderId;
             record.delete({
@@ -100,7 +98,6 @@ define(['N/record', 'N/search'], function(record, search) {
             return { status: 'error', message: e.message };
         }
     }
-
     return {
         get: doGet,
         post: doPost,
