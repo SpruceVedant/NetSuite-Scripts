@@ -18,19 +18,14 @@ define(['N/record', 'N/log'], function (record, log) {
                 log.debug({
                     title: 'RESTlet Execution Started',
                     details: 'Processing DELETE request...'
-                });
-
+                })
                 var contactId = parameters.contactId;
-
-                //to  Check if contactId is missing in the request parameters
-                if (contactId == undefined || contactId == null) {
+               if (contactId == undefined || contactId == null) {
                     throw {
                         name: 'InvalidRequestError',
                         message: 'Contact ID is missing in the request parameters.'
                     };
                 }
-
-                // to Delete the contact record
                 record.delete({
                     type: record.Type.CONTACT,
                     id: contactId
@@ -45,7 +40,6 @@ define(['N/record', 'N/log'], function (record, log) {
                     title: 'RESTlet Execution Completed',
                     details: 'Processed DELETE request.'
                 });
-
                 return JSON.stringify({ success: true, message: 'Contact data deleted successfully.' });
             } catch (e) {
                 log.error({
