@@ -1,7 +1,7 @@
 const https = require('https');
 
 
-const url = 'https://.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=812&deploy=1&salesOrderId=8509';
+const url = '';
 
 // Request options, including headers
 const options = {
