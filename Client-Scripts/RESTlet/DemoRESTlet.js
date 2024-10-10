@@ -30,5 +30,3 @@ const req = https.request(url, options, (res) => {
         }
     });
 });
-
-req.end();
