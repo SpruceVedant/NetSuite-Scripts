@@ -101,8 +101,7 @@ function(currentRecord, email, runtime, record, url, search) {
                 subject: "PO is rejected",
                 body: 'Your PO'+ idRec + 'is rejected due to reason: '+ reason 
             });
- 
-	
+ // experience Fun friday
     }
 
  
