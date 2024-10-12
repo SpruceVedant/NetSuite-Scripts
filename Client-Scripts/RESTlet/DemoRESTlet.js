@@ -1,6 +1,4 @@
 const https = require('https');
-
-
 const url = '';
 
 // Request options, including headers
