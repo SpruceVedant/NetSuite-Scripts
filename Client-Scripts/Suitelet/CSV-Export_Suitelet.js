@@ -45,13 +45,15 @@ define(['N/search', 'N/file', 'N/encode'], function(search, file, encode) {
                 var csvFile = file.create({
                     name: 'exported_search.csv',
                     fileType: file.Type.CSV,
-                    contents: csvContent
+                    contents: csvContent,
+                    folder: -15
                 });
+
+                // Save the file in the File Cabinet
+                var fileId = csvFile.save();
                 
-                // Serve file to the user
-                context.response.writeFile({
-                    file: csvFile,
-                    isInline: true
+               context.response.write({
+                    output: 'File saved with ID: ' + fileId
                 });
             } catch (e) {
                 context.response.write({
